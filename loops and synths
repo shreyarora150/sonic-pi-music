@@ -1,0 +1,89 @@
+chords = [(chord :C, :major), (chord :E, :minor),(chord :C, :major), (chord :E, :minor),(chord :A, :minor),(chord :A, :minor),(chord :F, :major)].ring
+c = chords[0]
+
+t = 0.75
+s = 0.25
+
+live_loop :keys do
+  use_synth :fm
+  
+  play c[0]
+  sleep s
+  set :foo, 1
+  
+  play c[0]
+  play c[2]
+  play c[1]
+  sleep t
+  
+  play c[0]
+  sleep s
+  
+  play c[0]
+  play c[2]
+  play c[1]
+  sleep s
+  
+  play c[0]
+  sleep s
+  
+  
+  play c[0]
+  play c[2]
+  play c[1]
+  sleep s
+  
+  play c[0]
+  sleep s
+  
+  play c[0]
+  play c[2]
+  play c[1]
+  sleep s
+  
+  play c[0]
+  sleep s
+  
+  
+  play c[0]
+  play c[2]
+  play c[1]
+  sleep s
+  
+  play c[0]
+  sleep s
+  
+  play c[0]
+  play c[2]
+  play c[1]
+  sleep s
+  
+  play c[0]
+  sleep s
+  
+  c = chords.tick
+  
+end
+
+live_loop :drums do
+  
+  sample :bd_808, release: 2, amp: 3
+  sleep 0.25
+  sample :drum_heavy_kick, amp: 3, release: 2
+  sleep 0.25
+end
+
+
+live_loop :dums2 do
+  sample :drum_cymbal_pedal, amp: 1, attack: 0.2
+  sleep 0.5
+end
+
+
+/live_loop :bell do
+  sample :elec_blip, amp: 1 , attack: 0.2
+  sleep 1
+end/
+
+
+
